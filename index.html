@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hilal Moda — Osmanlı zarafetini modern tesettür modasıyla buluşturan kadın giyim markası. Cami ilhamlı kaftanlar, takımlar ve abayalar.">
+    <title>Hilal Moda | Osmanlı Zarafeti & Kadın Tesettür Moda</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+Arabic:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ===== ANNOUNCEMENT BAR ===== -->
+    <div class="announcement-bar" id="announcementBar">
+        <div class="announcement-content">
+            <span class="ann-icon">✦</span>
+            <span>Yeni Osmanlı Koleksiyonu Geldi! 500₺ Üzeri Alışverişlerde Ücretsiz Kargo</span>
+            <span class="ann-icon">✦</span>
+            <span>İlk Siparişinizde %15 İndirim — Kod: <strong>HILAL15</strong></span>
+            <span class="ann-icon">✦</span>
+        </div>
+        <button class="ann-close" onclick="document.getElementById('announcementBar').style.display='none'">✕</button>
+    </div>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <div class="logo-arabesque">☽</div>
+                <div class="logo-text">
+                    <span class="logo-main">Hilal Moda</span>
+                    <span class="logo-sub">هلال مودا</span>
+                </div>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#koleksiyon" class="nav-link">Koleksiyonlar</a></li>
+                <li class="nav-dropdown">
+                    <a href="#urunler" class="nav-link">Kadın Giyim <span class="dropdown-arrow">▾</span></a>
+                    <div class="dropdown-menu">
+                        <a href="#urunler">Takımlar</a>
+                        <a href="#urunler">Kaftanlar</a>
+                        <a href="#urunler">Abayalar</a>
+                        <a href="#urunler">Tesettür Elbiseler</a>
+                        <a href="#urunler">Eşarp & Hijab</a>
+                        <a href="#urunler">Tunik & Bluzlar</a>
+                    </div>
+                </li>
+                <li><a href="#hakkimizda" class="nav-link">Hakkımızda</a></li>
+                <li><a href="#iletisim" class="nav-link">İletişim</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="nav-btn" id="searchBtn" aria-label="Ara">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </button>
+                <button class="nav-btn" aria-label="Favoriler">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                </button>
+                <button class="nav-btn cart-btn" aria-label="Sepet" id="cartBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="nav-hamburger" id="hamburger" aria-label="Menü">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+        <div class="search-overlay" id="searchOverlay">
+            <div class="search-inner">
+                <input type="text" placeholder="Ürün ara... (kaftan, abaya, takım)" class="search-input" id="searchInput">
+                <button class="search-close" onclick="closeSearch()">✕</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-ambient"></div>
+
+        <div class="container hero-layout">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="arabesque-ornament">❖</span>
+                    <span>2025 Osmanlı Koleksiyonu</span>
+                    <span class="arabesque-ornament">❖</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-arabic">الأناقة العثمانية للمرأة</span>
+                    <span class="title-main">Osmanlı Zarafeti</span>
+                    <span class="title-sub">Kadın Tesettür Modası</span>
+                </h1>
+                <p class="hero-desc">
+                    Asırlık Osmanlı nakış sanatını modern tesettür çizgisiyle buluşturuyoruz.<br>
+                    Cami mimarisinden ilham alan, her kadını kraliçe hissettiren el işlemeli tasarımlar.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#urunler" class="btn-primary">Koleksiyonu Keşfet ✦</a>
+                    <a href="#koleksiyon" class="btn-secondary">Yeni Gelenler →</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-num">12.000+</span>
+                        <span class="stat-label">Mutlu Müşteri</span>
+                    </div>
+                    <div class="stat-divider">☽</div>
+                    <div class="stat-item">
+                        <span class="stat-num">300+</span>
+                        <span class="stat-label">Özel Tasarım</span>
+                    </div>
+                    <div class="stat-divider">☽</div>
+                    <div class="stat-item">
+                        <span class="stat-num">100%</span>
+                        <span class="stat-label">El İşçiliği</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Right: Luxury Full-Body Model Showcase (Head-to-Toe, Zero Crop) -->
+            <div class="hero-showcase">
+                <div class="hero-showcase-frame">
+                    <div class="hero-slides" id="heroSlides">
+                        <div class="hero-slide active">
+                            <img src="images/suleymaniye_takim_front.jpg" alt="Süleymaniye Koleksiyonu" class="showcase-img">
+                            <div class="showcase-caption">
+                                <span class="showcase-mosque">🕌 Süleymaniye Camii (İstanbul)</span>
+                                <h4 class="showcase-title">Süleymaniye Altın Nakışlı Ceket Takım</h4>
+                                <span class="showcase-price">1.299₺</span>
+                            </div>
+                        </div>
+                        <div class="hero-slide">
+                            <img src="images/koleksiyon/urun_2.jpg" alt="Topkapı Saray Koleksiyonu" class="showcase-img">
+                            <div class="showcase-caption">
+                                <span class="showcase-mosque">🏛️ Topkapı Sarayı (İstanbul)</span>
+                                <h4 class="showcase-title">Topkapı Gece Asaleti Kruvaze Takım</h4>
+                                <span class="showcase-price">1.699₺</span>
+                            </div>
+                        </div>
+                        <div class="hero-slide">
+                            <img src="images/koleksiyon/urun_1.jpg" alt="Sultanahmet Koleksiyonu" class="showcase-img">
+                            <div class="showcase-caption">
+                                <span class="showcase-mosque">🕌 Sultanahmet (İstanbul)</span>
+                                <h4 class="showcase-title">Sultanahmet İpek Varaklı Takım</h4>
+                                <span class="showcase-price">1.499₺</span>
+                            </div>
+                        </div>
+                        <div class="hero-slide">
+                            <img src="images/koleksiyon/urun_3.jpg" alt="Selimiye Koleksiyonu" class="showcase-img">
+                            <div class="showcase-caption">
+                                <span class="showcase-mosque">🕌 Selimiye Camii (Edirne)</span>
+                                <h4 class="showcase-title">Selimiye Kum Beji İpek Kaftan</h4>
+                                <span class="showcase-price">1.399₺</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Thumb switchers -->
+                    <div class="hero-thumbs">
+                        <button class="hero-thumb-btn active" onclick="goSlide(0)" title="Süleymaniye">
+                            <img src="images/suleymaniye_takim_front.jpg" alt="Süleymaniye">
+                        </button>
+                        <button class="hero-thumb-btn" onclick="goSlide(1)" title="Topkapı">
+                            <img src="images/koleksiyon/urun_2.jpg" alt="Topkapı">
+                        </button>
+                        <button class="hero-thumb-btn" onclick="goSlide(2)" title="Sultanahmet">
+                            <img src="images/koleksiyon/urun_1.jpg" alt="Sultanahmet">
+                        </button>
+                        <button class="hero-thumb-btn" onclick="goSlide(3)" title="Selimiye">
+                            <img src="images/koleksiyon/urun_3.jpg" alt="Selimiye">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-scroll">
+            <div class="scroll-line"></div>
+            <span>Aşağı Kaydır</span>
+        </div>
+    </section>
+
+    <!-- ===== MARQUEE STRIP ===== -->
+    <div class="marquee-strip">
+        <div class="marquee-track">
+            <span>✦ Süleymaniye Koleksiyonu</span>
+            <span>✦ Sultanahmet Serisi</span>
+            <span>✦ Topkapı Nakışları</span>
+            <span>✦ Edirne Çiçekleri</span>
+            <span>✦ Bursa İpeklisi</span>
+            <span>✦ Mevlana Dervişi</span>
+            <span>✦ Süleymaniye Koleksiyonu</span>
+            <span>✦ Sultanahmet Serisi</span>
+            <span>✦ Topkapı Nakışları</span>
+            <span>✦ Edirne Çiçekleri</span>
+            <span>✦ Bursa İpeklisi</span>
+            <span>✦ Mevlana Dervişi</span>
+        </div>
+    </div>
+
+    <!-- ===== FEATURED BANNER (Paylaşılan tasarıma benzer kart görünümü) ===== -->
+    <section class="featured-banner" id="koleksiyon">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-ornament">
+                    <span class="ornament-line"></span>
+                    <span class="ornament-icon">❋</span>
+                    <span class="ornament-line"></span>
+                </div>
+                <h2 class="section-title">Öne Çıkan Koleksiyonlar</h2>
+                <p class="section-desc">Cami mimarisinden ilham alan, özel nakışlı kadın takımları</p>
+            </div>
+
+            <div class="featured-grid">
+                <!-- Büyük kart - Süleymaniye -->
+                <div class="featured-card featured-card--large">
+                    <div class="fcard-img-wrap">
+                        <img src="images/suleymaniye_takim_front.jpg"
+                             alt="Süleymaniye Cami Motifli Takım"
+                             onerror="this.style.background='linear-gradient(135deg,#1a1a3a,#2d2d5a)'">
+                        <div class="fcard-tag">
+                            <span class="fcard-type">TAKIM</span>
+                        </div>
+                        <div class="fcard-mosque-tag">
+                            <span>🕌 Süleymaniye Camii (İstanbul)</span>
+                        </div>
+                        <div class="fcard-dots">
+                            <span class="fdot active"></span>
+                            <span class="fdot"></span>
+                            <span class="fdot"></span>
+                        </div>
+                    </div>
+                    <div class="fcard-info">
+                        <p class="fcard-label">Klasik Cami Motifli Takım</p>
+                        <h3 class="fcard-name">Süleymaniye Altın Nakışlı<br>Ceket & Palazzo Takım</h3>
+                        <div class="fcard-price">
+                            <span class="price-old">1.799₺</span>
+                            <span class="price-new">1.299₺</span>
+                        </div>
+                        <button class="fcard-btn" onclick="addToCart('Süleymaniye Altın Nakışlı Takım', 1299)">Sepete Ekle</button>
+                    </div>
+                </div>
+
+                <!-- Küçük kart - Topkapı Gece Asaleti -->
+                <div class="featured-card">
+                    <div class="fcard-img-wrap">
+                        <img src="images/koleksiyon/urun_2.jpg"
+                             alt="Topkapı Sarayı Gece Asaleti Kruvaze Takım"
+                             onerror="this.style.background='linear-gradient(135deg,#0a1a2a,#1a3a5a)'">
+                        <div class="fcard-tag">
+                            <span class="fcard-type">TAKIM</span>
+                        </div>
+                        <div class="fcard-mosque-tag">
+                            <span>🏛️ Topkapı Sarayı (İstanbul)</span>
+                        </div>
+                        <div class="fcard-dots">
+                            <span class="fdot active"></span>
+                            <span class="fdot"></span>
+                            <span class="fdot"></span>
+                        </div>
+                    </div>
+                    <div class="fcard-info">
+                        <p class="fcard-label">Özel Koleksiyon Takım</p>
+                        <h3 class="fcard-name">Topkapı Sarayı<br>Gece Asaleti Kruvaze Takım</h3>
+                        <div class="fcard-price">
+                            <span class="price-old">2.199₺</span>
+                            <span class="price-new">1.699₺</span>
+                        </div>
+                        <button class="fcard-btn" onclick="addToCart('Topkapı Sarayı Gece Asaleti Kruvaze Takım', 1699)">Sepete Ekle</button>
+                    </div>
+                </div>
+
+                <!-- Küçük kart - Sultanahmet İpek Varak -->
+                <div class="featured-card">
+                    <div class="fcard-img-wrap">
+                        <img src="images/koleksiyon/urun_1.jpg"
+                             alt="Sultanahmet İpek Varaklı Saray Takımı"
+                             onerror="this.style.background='linear-gradient(135deg,#2a1a0a,#4a3a1a)'">
+                        <div class="fcard-tag">
+                            <span class="fcard-type">TAKIM</span>
+                        </div>
+                        <div class="fcard-mosque-tag">
+                            <span>🕌 Sultanahmet (İstanbul)</span>
+                        </div>
+                        <div class="fcard-dots">
+                            <span class="fdot active"></span>
+                            <span class="fdot"></span>
+                        </div>
+                    </div>
+                    <div class="fcard-info">
+                        <p class="fcard-label">Yeni Sezon</p>
+                        <h3 class="fcard-name">Sultanahmet İpek<br>Varaklı Saray Takımı</h3>
+                        <div class="fcard-price">
+                            <span class="price-new">1.499₺</span>
+                        </div>
+                        <button class="fcard-btn" onclick="addToCart('Sultanahmet İpek Varaklı Saray Takımı', 1499)">Sepete Ekle</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRODUCTS SECTION ===== -->
+    <section class="products" id="urunler">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-ornament">
+                    <span class="ornament-line"></span>
+                    <span class="ornament-icon">❋</span>
+                    <span class="ornament-line"></span>
+                </div>
+                <h2 class="section-title">Kadın Tesettür Koleksiyonu</h2>
+                <p class="section-desc">Osmanlı cami mimarisinden ilham alınan, 6 özel model</p>
+            </div>
+
+            <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="all">Tümü</button>
+                <button class="filter-tab" data-filter="takim">Takımlar</button>
+                <button class="filter-tab" data-filter="kaftan">Kaftanlar</button>
+                <button class="filter-tab" data-filter="abaya">Abayalar</button>
+                <button class="filter-tab" data-filter="elbise">Elbiseler</button>
+            </div>
+
+            <div class="products-grid" id="productsGrid">
+
+                <!-- Ürün 1: Süleymaniye -->
+                <div class="product-card" data-category="takim">
+                    <div class="product-img-wrap">
+                        <img src="images/suleymaniye_takim_front.jpg"
+                             alt="Süleymaniye Altın Nakışlı Ceket Palazzo Takım"
+                             class="product-img-main">
+                        <div class="product-img-hover">
+                            <img src="images/suleymaniye_takim_back.jpg"
+                                 alt="Süleymaniye Takım — arka görünüm">
+                        </div>
+                        <div class="product-badge badge-new">Yeni Sezon</div>
+                        <div class="product-overlay">
+                            <button class="product-quick-view" onclick="openModal(0)">Hızlı Bakış</button>
+                        </div>
+                        <button class="product-wishlist" aria-label="Favorilere Ekle">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <div class="product-mosque-label">🕌 Süleymaniye (İstanbul)</div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category-tag">TAKIM</div>
+                        <h3 class="product-name">Süleymaniye Altın Nakışlı<br>Ceket & Palazzo Takım</h3>
+                        <p class="product-desc">Süleymaniye Camii'nin avlusundan ilham, el işlemeli altın nakış, lacivert kadife ceket & palazzo pantolon</p>
+                        <div class="product-colors">
+                            <button class="color-dot color-active" style="background:#1a1a4a" title="Lacivert" aria-label="Lacivert"></button>
+                            <button class="color-dot" style="background:#4a0a0a" title="Bordo" aria-label="Bordo"></button>
+                            <button class="color-dot" style="background:#0a2a0a" title="Zümrüt" aria-label="Zümrüt"></button>
+                        </div>
+                        <div class="product-sizes-preview">
+                            <span>XS</span><span>S</span><span>M</span><span>L</span><span>XL</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                <span class="price-old">1.799₺</span>
+                                <span class="price-new">1.299₺</span>
+                            </div>
+                            <button class="add-to-cart" onclick="addToCart('Süleymaniye Altın Nakışlı Takım', 1299)">
+                                + Sepete Ekle
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ürün 2: Topkapı Sarayı -->
+                <div class="product-card" data-category="takim">
+                    <div class="product-img-wrap">
+                        <img src="images/koleksiyon/urun_2.jpg"
+                             alt="Topkapı Sarayı Gece Asaleti Kruvaze Takım"
+                             class="product-img-main">
+                        <div class="product-badge badge-hot">En Çok Satan</div>
+                        <div class="product-overlay">
+                            <button class="product-quick-view" onclick="openModal(1)">Hızlı Bakış</button>
+                        </div>
+                        <button class="product-wishlist" aria-label="Favorilere Ekle">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <div class="product-mosque-label">🏛️ Topkapı Sarayı (İstanbul)</div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category-tag">TAKIM</div>
+                        <h3 class="product-name">Topkapı Sarayı<br>Gece Asaleti Kruvaze Takım</h3>
+                        <p class="product-desc">Kruvaze kesim asil blazer ceket, dökümlü palazzo pantolon, altın desenli ipek fular ile zarif saray silüeti</p>
+                        <div class="product-colors">
+                            <button class="color-dot color-active" style="background:#131c38" title="Gece Laciverti" aria-label="Gece Laciverti"></button>
+                            <button class="color-dot" style="background:#111111" title="Siyah" aria-label="Siyah"></button>
+                            <button class="color-dot" style="background:#4a121a" title="Bordo" aria-label="Bordo"></button>
+                        </div>
+                        <div class="product-sizes-preview">
+                            <span>S</span><span>M</span><span>L</span><span>XL</span><span>2XL</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                <span class="price-old">2.199₺</span>
+                                <span class="price-new">1.699₺</span>
+                            </div>
+                            <button class="add-to-cart" onclick="addToCart('Topkapı Sarayı Gece Asaleti Kruvaze Takım', 1699)">
+                                + Sepete Ekle
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ürün 3: Sultanahmet İpek Varak -->
+                <div class="product-card" data-category="takim">
+                    <div class="product-img-wrap">
+                        <img src="images/koleksiyon/urun_1.jpg"
+                             alt="Sultanahmet İpek Varaklı Saray Takımı"
+                             class="product-img-main">
+                        <div class="product-overlay">
+                            <button class="product-quick-view" onclick="openModal(2)">Hızlı Bakış</button>
+                        </div>
+                        <button class="product-wishlist" aria-label="Favorilere Ekle">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <div class="product-mosque-label">🕌 Sultanahmet (İstanbul)</div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category-tag">TAKIM</div>
+                        <h3 class="product-name">Sultanahmet İpek<br>Varaklı Saray Takımı</h3>
+                        <p class="product-desc">Sultanahmet mimarisinin sıcak taş tonlarından ilham, zarif kemer detaylı ceket ve akıcı palazzo pantolon kombinasyonu</p>
+                        <div class="product-colors">
+                            <button class="color-dot color-active" style="background:#d8cbb8" title="Krem Bej" aria-label="Krem Bej"></button>
+                            <button class="color-dot" style="background:#553b26" title="Kahve" aria-label="Kahve"></button>
+                            <button class="color-dot" style="background:#1a1a3a" title="Gece Mavisi" aria-label="Gece Mavisi"></button>
+                        </div>
+                        <div class="product-sizes-preview">
+                            <span>S</span><span>M</span><span>L</span><span>XL</span><span>2XL</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                <span class="price-new">1.499₺</span>
+                            </div>
+                            <button class="add-to-cart" onclick="addToCart('Sultanahmet İpek Varaklı Saray Takımı', 1499)">
+                                + Sepete Ekle
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ürün 4: Selimiye Kum Beji Kaftan -->
+                <div class="product-card" data-category="kaftan">
+                    <div class="product-img-wrap">
+                        <img src="images/koleksiyon/urun_3.jpg"
+                             alt="Selimiye Kum Beji İpek Kaftan Takım"
+                             class="product-img-main">
+                        <div class="product-badge badge-sale">%25 İndirim</div>
+                        <div class="product-overlay">
+                            <button class="product-quick-view" onclick="openModal(3)">Hızlı Bakış</button>
+                        </div>
+                        <button class="product-wishlist" aria-label="Favorilere Ekle">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <div class="product-mosque-label">🕌 Selimiye Camii (Edirne)</div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category-tag">KAFTAN</div>
+                        <h3 class="product-name">Selimiye Kum Beji<br>İpek Kaftan Takım</h3>
+                        <p class="product-desc">Mimar Sinan'ın başyapıtı Selimiye'nin mermer kubbelerinden esinlenen duru krem ve kum beji tonlarında lüks ipek kaftan takım</p>
+                        <div class="product-colors">
+                            <button class="color-dot color-active" style="background:#e8dfcc" title="Kum Beji" aria-label="Kum Beji"></button>
+                            <button class="color-dot" style="background:#111111" title="Siyah" aria-label="Siyah"></button>
+                            <button class="color-dot" style="background:#8b6914" title="Altın" aria-label="Altın"></button>
+                        </div>
+                        <div class="product-sizes-preview">
+                            <span>XS</span><span>S</span><span>M</span><span>L</span><span>XL</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                <span class="price-old">1.899₺</span>
+                                <span class="price-new">1.399₺</span>
+                            </div>
+                            <button class="add-to-cart" onclick="addToCart('Selimiye Kum Beji İpek Kaftan Takım', 1399)">
+                                + Sepete Ekle
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ürün 5: Bursa Kehribar Takım -->
+                <div class="product-card" data-category="takim">
+                    <div class="product-img-wrap">
+                        <img src="images/koleksiyon/urun_4.jpg"
+                             alt="Bursa Yeşil Türbe Kehribar & Altın Takım"
+                             class="product-img-main">
+                        <div class="product-overlay">
+                            <button class="product-quick-view" onclick="openModal(4)">Hızlı Bakış</button>
+                        </div>
+                        <button class="product-wishlist" aria-label="Favorilere Ekle">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <div class="product-mosque-label">🌿 Yeşil Türbe (Bursa)</div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category-tag">TAKIM</div>
+                        <h3 class="product-name">Bursa Yeşil Türbe<br>Kehribar & Altın Takım</h3>
+                        <p class="product-desc">Bursa ipekçilik mirasının altın varak ve sıcak kehribar tonlarıyla harmanlandığı, özel dokuma asil tesettür takım</p>
+                        <div class="product-colors">
+                            <button class="color-dot color-active" style="background:#b38054" title="Kehribar" aria-label="Kehribar"></button>
+                            <button class="color-dot" style="background:#e8dfcc" title="Krem" aria-label="Krem"></button>
+                            <button class="color-dot" style="background:#1a233a" title="Lacivert" aria-label="Lacivert"></button>
+                        </div>
+                        <div class="product-sizes-preview">
+                            <span>XS</span><span>S</span><span>M</span><span>L</span><span>XL</span><span>2XL</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                <span class="price-new">1.599₺</span>
+                            </div>
+                            <button class="add-to-cart" onclick="addToCart('Bursa Yeşil Türbe Kehribar & Altın Takım', 1599)">
+                                + Sepete Ekle
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ürün 6: Konya Mevlana Zümrüt & Yakut Abaya -->
+                <div class="product-card" data-category="abaya">
+                    <div class="product-img-wrap">
+                        <img src="images/koleksiyon/urun_5.jpg"
+                             alt="Konya Mevlana Zümrüt & Yakut Dökümlü Abaya"
+                             class="product-img-main">
+                        <div class="product-badge badge-limited">Sınırlı Üretim</div>
+                        <div class="product-overlay">
+                            <button class="product-quick-view" onclick="openModal(5)">Hızlı Bakış</button>
+                        </div>
+                        <button class="product-wishlist" aria-label="Favorilere Ekle">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </button>
+                        <div class="product-mosque-label">🌹 Mevlana Türbesi (Konya)</div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category-tag">ABAYA</div>
+                        <h3 class="product-name">Konya Mevlana<br>Zümrüt & Yakut Dökümlü Abaya</h3>
+                        <p class="product-desc">Mevlevi tezhip sanatının derin tonlarını taşıyan, akıcı kumaş yapısı ve saray nakışlarıyla sınırlı üretim abaya</p>
+                        <div class="product-colors">
+                            <button class="color-dot color-active" style="background:#1d2938" title="Gece Mavisi" aria-label="Gece Mavisi"></button>
+                            <button class="color-dot" style="background:#6c2e22" title="Kiremit Yakut" aria-label="Kiremit Yakut"></button>
+                            <button class="color-dot" style="background:#8b6914" title="Altın" aria-label="Altın"></button>
+                        </div>
+                        <div class="product-sizes-preview">
+                            <span>S</span><span>M</span><span>L</span><span>XL</span>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">
+                                <span class="price-old">2.299₺</span>
+                                <span class="price-new">1.749₺</span>
+                            </div>
+                            <button class="add-to-cart" onclick="addToCart('Konya Mevlana Zümrüt & Yakut Dökümlü Abaya', 1749)">
+                                + Sepete Ekle
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                                <span class="price-new">1.749₺</span>
+                            </div>
+                            <button class="add-to-cart" onclick="addToCart('Konya Mevlana Zümrüt & Yakut Dökümlü Abaya', 1749)">
+                                + Sepete Ekle
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="load-more-wrap">
+                <a href="#" class="btn-load-more">Tüm Ürünleri Gör <span>→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MID BANNER ===== -->
+    <section class="mid-banner" id="hakkimizda">
+        <div class="container">
+            <div class="mid-banner-layout">
+                <div class="mid-banner-content">
+                    <div class="arabic-calligraphy">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+                    <h2>Osmanlı Nakışının Zirvesi</h2>
+                    <p>Her ürünümüz, Türk-İslam sanatının asırlık geleneklerinden ilham alarak özenle tasarlanır ve usta ellerce el tezgahlarında üretilir. Zarafet, asalet ve modern tesettürün buluşma noktası.</p>
+                    <a href="#urunler" class="btn-primary">Koleksiyonu Keşfet ✦</a>
+                </div>
+                <div class="mid-banner-frame">
+                    <img src="images/koleksiyon_4lu_banner.jpg"
+                         alt="Hilal Moda 2025 Osmanlı Koleksiyonu"
+                         loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WHY US ===== -->
+    <section class="why-us">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-ornament">
+                    <span class="ornament-line"></span>
+                    <span class="ornament-icon">❋</span>
+                    <span class="ornament-line"></span>
+                </div>
+                <h2 class="section-title">Neden Hilal Moda?</h2>
+            </div>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 60 60" fill="none"><circle cx="30" cy="30" r="28" stroke="currentColor" stroke-width="1.5"/><path d="M20 30l7 7 13-14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    </div>
+                    <h3>%100 Tesettüre Uygun</h3>
+                    <p>Tüm modellerimiz uzun kollu, tam kapalı, İslami hassasiyete uygun tasarlanmıştır</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 60 60" fill="none"><circle cx="30" cy="30" r="28" stroke="currentColor" stroke-width="1.5"/><path d="M18 42l4-10 4 6 5-14 5 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3>El İşlemeli Osmanlı Nakışı</h3>
+                    <p>Geleneksel usta nakışçıların elleriyle işlenen, eşsiz Osmanlı motifli tasarımlar</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 60 60" fill="none"><circle cx="30" cy="30" r="28" stroke="currentColor" stroke-width="1.5"/><path d="M30 15v5M30 40v5M15 30h5M40 30h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="30" cy="30" r="7" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </div>
+                    <h3>Lüks Kumaş Kalitesi</h3>
+                    <p>İpek, kadife, şifon ve jakarlı kumaşlarla Türkiye'nin en kaliteli tekstil üreticilerinden</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 60 60" fill="none"><circle cx="30" cy="30" r="28" stroke="currentColor" stroke-width="1.5"/><path d="M20 20h20v20H20z" stroke="currentColor" stroke-width="1.5" rx="4"/><path d="M26 30h8M30 26v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    </div>
+                    <h3>Ücretsiz Kargo & İade</h3>
+                    <p>500₺ üzeri ücretsiz kargo, 30 gün koşulsuz iade garantisi ile güvenli alışveriş</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-ornament">
+                    <span class="ornament-line"></span>
+                    <span class="ornament-icon">❋</span>
+                    <span class="ornament-line"></span>
+                </div>
+                <h2 class="section-title">Müşterilerimiz Ne Diyor?</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Süleymaniye takımını kız kardeşimin düğününe giydim. Herkes 'Bu ne kadar şık!' dedi. Osmanlı nakışları gerçekten büyüleyici, kalitesi mükemmel!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">F</div>
+                        <div>
+                            <strong>Fatma H.</strong>
+                            <span>İstanbul • Verified ✓</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card testimonial-featured">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Sultanahmet kaftanını aldım — hem şık hem tesettüre tam uygun. Kumaşı çok kaliteli, işlemeler el yapımı olduğu belli. Bir dahaki alışverişte tekrar geleceğim!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">Z</div>
+                        <div>
+                            <strong>Zeynep K.</strong>
+                            <span>Ankara • Verified ✓</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Mevlana kaftanını nişanda giydim, ipek kalitesi muhteşemdi. Kargo çok hızlı geldi, özel kutulama ambalajı da ayrıca harika bir his yaşattı. Teşekkürler Hilal Moda!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div>
+                            <strong>Ayşe M.</strong>
+                            <span>Bursa • Verified ✓</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== INSTAGRAM STRIP ===== -->
+    <section class="insta-strip">
+        <div class="container">
+            <div class="insta-header">
+                <h3>📸 @hilal_moda Instagram</h3>
+                <a href="#" class="insta-follow">Takip Et →</a>
+            </div>
+            <div class="insta-grid">
+                <div class="insta-item">
+                    <img src="images/suleymaniye_takim_front.jpg" alt="Instagram 1">
+                    <div class="insta-overlay">❤️ 2.4K</div>
+                </div>
+                <div class="insta-item">
+                    <img src="images/koleksiyon/urun_1.jpg" alt="Instagram 2">
+                    <div class="insta-overlay">❤️ 1.8K</div>
+                </div>
+                <div class="insta-item">
+                    <img src="images/koleksiyon/urun_2.jpg" alt="Instagram 3">
+                    <div class="insta-overlay">❤️ 3.1K</div>
+                </div>
+                <div class="insta-item">
+                    <img src="images/koleksiyon/urun_3.jpg" alt="Instagram 4">
+                    <div class="insta-overlay">❤️ 2.7K</div>
+                </div>
+                <div class="insta-item">
+                    <img src="images/koleksiyon/urun_4.jpg" alt="Instagram 5">
+                    <div class="insta-overlay">❤️ 4.2K</div>
+                </div>
+                <div class="insta-item">
+                    <img src="images/koleksiyon/urun_5.jpg" alt="Instagram 6">
+                    <div class="insta-overlay">❤️ 1.6K</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NEWSLETTER ===== -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-inner">
+                <div class="newsletter-ornament">❖</div>
+                <h2>Osmanlı Zarafetini Takip Et</h2>
+                <p>Yeni koleksiyonlar, özel indirimler ve stil rehberleri için bültenimize abone ol</p>
+                <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+                    <input type="email" placeholder="E-posta adresiniz" class="newsletter-input" required id="newsletterEmail">
+                    <button type="submit" class="newsletter-btn">Abone Ol ✦</button>
+                </form>
+                <p class="newsletter-note">✓ Spam yok &nbsp;|&nbsp; ✓ İstediğin zaman çıkabilirsin</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" id="iletisim">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <div class="logo-arabesque">☽</div>
+                            <div class="logo-text">
+                                <span class="logo-main">Hilal Moda</span>
+                                <span class="logo-sub">هلال مودا</span>
+                            </div>
+                        </div>
+                        <p>Osmanlı zarafetini modern kadın tesettür modasıyla buluşturan, özgün lüks tesettür markası. Türkiye'nin en şık tesettür koleksiyonları.</p>
+                        <div class="footer-social">
+                            <a href="#" class="social-link" aria-label="Instagram">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+                            </a>
+                            <a href="#" class="social-link" aria-label="TikTok">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.16 8.16 0 004.77 1.52V6.76a4.85 4.85 0 01-1-.07z"/></svg>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Pinterest">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+                            </a>
+                            <a href="#" class="social-link" aria-label="WhatsApp">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="footer-links-col">
+                        <h4>Kadın Koleksiyonları</h4>
+                        <ul>
+                            <li><a href="#">Süleymaniye Serisi</a></li>
+                            <li><a href="#">Sultanahmet Serisi</a></li>
+                            <li><a href="#">Topkapı Serisi</a></li>
+                            <li><a href="#">Edirne Selimiye</a></li>
+                            <li><a href="#">Bursa & Konya</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-links-col">
+                        <h4>Yardım & Bilgi</h4>
+                        <ul>
+                            <li><a href="#">Hakkımızda</a></li>
+                            <li><a href="#">Kargo & Teslimat</a></li>
+                            <li><a href="#">İade & Değişim</a></li>
+                            <li><a href="#">Beden Rehberi</a></li>
+                            <li><a href="#">Sıkça Sorulanlar</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-contact">
+                        <h4>İletişim</h4>
+                        <div class="contact-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.67 9.74 19.79 19.79 0 011.6 1.1 2 2 0 013.59 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.91 7.91a16 16 0 006.16 6.16l.98-.98a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                            <span>+90 (212) 555 0123</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <span>info@hilalmoda.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span>Kapalıçarşı, Grand Bazaar Han, İstanbul</span>
+                        </div>
+                        <div class="footer-trust">
+                            <div class="trust-badge">🔒 SSL Güvenli Ödeme</div>
+                            <div class="trust-badge">⭐ 4.9/5 Müşteri Puanı</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2024 Hilal Moda. Tüm hakları saklıdır. | Kadın Tesettür Giyim</p>
+                <div class="footer-payment">
+                    <span>Güvenli Ödeme:</span>
+                    <span class="payment-badge">VISA</span>
+                    <span class="payment-badge">MC</span>
+                    <span class="payment-badge">Troy</span>
+                    <span class="payment-badge">iyzico</span>
+                    <span class="payment-badge">PayTR</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== PRODUCT MODAL ===== -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+        <div class="modal-box" id="modalBox">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <div class="modal-content" id="modalContent"></div>
+        </div>
+    </div>
+
+    <!-- ===== CART SIDEBAR ===== -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Sepetim <span id="cartItemCount">(0 Ürün)</span></h3>
+            <button onclick="toggleCart()">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="cart-empty">
+                <div class="cart-empty-icon">🛍️</div>
+                <p>Sepetiniz boş</p>
+                <a href="#urunler" onclick="toggleCart()">Alışverişe Başla →</a>
+            </div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display:none">
+            <div class="cart-total">
+                <span>Toplam:</span>
+                <strong id="cartTotal">0₺</strong>
+            </div>
+            <button class="cart-checkout-btn">Ödemeye Geç →</button>
+        </div>
+    </div>
+    <div class="cart-backdrop" id="cartBackdrop" onclick="toggleCart()"></div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
